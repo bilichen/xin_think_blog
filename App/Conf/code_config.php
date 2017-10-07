@@ -1,0 +1,1 @@
+<?php	return array ( 'CODE_LEN' => '2', 'CODE_WIDTH' => '131', 'CODE_HEIGHT' => '21', 'CODE_FONT_SIZE' => '12', 'CODE_FONT_COLOR' => '', );?>
