@@ -4,20 +4,23 @@ class CateGoryAction extends CommonAction{
 
     //显示分类
     public function index(){
+        import('Class.CateGory',APP_PATH);
         $db = M('cate');
-        $this->cate = $db->order('sort')->select();
+        $cate = $db->order('sort')->select();
+        $this->cate = CateGory::subtree($cate);
         $this->display();
     }
 
     //添加分类视图
     public function addCate(){
+        $this->pid = I('pid' ,0);
         $this->display();
     }
 
     //添加分类表单处理
     public function addCateHandle(){
         if(M('cate')->add($_POST)){
-            $this->success('添加成功',U('addCate'));
+            $this->success('添加成功',U('index'));
         }else{
             $this->error('添加失败');
         }
@@ -25,7 +28,10 @@ class CateGoryAction extends CommonAction{
 
     //修改排序表单处理
     public function updataSort(){
-        p($_POST);
+        foreach($_POST as  $key => $value){
+            M('cate')->where(array('id'=>$key))-> setField('sort',$value);
+        }
+        $this->redirect(GROUP_NAME . '/CateGory/index');
     }
 }
 ?>
