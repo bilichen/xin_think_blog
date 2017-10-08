@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <Css file="__PUBLIC__/Css/style.css"/>
+    <style>
+        th,td{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="{:U(GROUP_NAME . '/CateGory/updataSort')}" method="post">
+        <table>
+           <tr>
+               <th>id</th>
+               <th>name</th>
+               <th>pid</th>
+               <th>sort</th>
+               <th>操作</th>
+           </tr>
+                <foreach name="cate" item="v">
+                    <tr>
+                        <td>{$v.id}</td>
+                        <td>{$v.name}</td>
+                        <td>{$v.pid}</td>
+                        <td><input type="text" name="sort" value="{$v['sort']}"></td>
+                        <td>
+                            [<a href="">添加子类</a>]
+                            [<a href="">修改</a>]
+                            [<a href="">删除</a>]
+                        </td>
+                    </tr>
+                </foreach>
+            <tr>
+                <td colspan="5" align="center"><input type="submit" value="修改排序"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

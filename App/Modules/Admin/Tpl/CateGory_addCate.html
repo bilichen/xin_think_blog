@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <Css file="__PUBLIC__/Css/style.css"/>
+</head>
+<body>
+    <form action="{:U(GROUP_NAME . '/CateGory/addCateHandle')}" method="post">
+        <table>
+            <tr>
+                <th colspan="2" align="center">
+                    添加栏目分类
+                </th>
+            </tr>
+            <tr>
+                <td align="right">
+                    分类栏目名称：
+                </td>
+                <td>
+                    <input type="text" name="name">
+                </td>
+            </tr>
+            <tr>
+                <td align="right">
+                    排序：
+                </td>
+                <td>
+                    <input type="hidden" name="pid" value="0">
+                    <input type="text" name="sort" value="100">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+
+                    <input type="submit" value="提交">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
