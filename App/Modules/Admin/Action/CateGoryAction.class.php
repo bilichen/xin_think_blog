@@ -6,8 +6,10 @@ class CateGoryAction extends CommonAction{
     public function index(){
         import('Class.CateGory',APP_PATH);
         $db = M('cate');
-        $cate = $db->order('sort')->select();
+       $cate = $db->order('sort')->select();
         $this->cate = CateGory::subtree($cate);
+//        p($cate);
+//        die;
         $this->display();
     }
 
