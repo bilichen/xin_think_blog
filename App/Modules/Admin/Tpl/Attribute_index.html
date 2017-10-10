@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <Css file="__PUBLIC__ ./Css/style.css"/>
+    <style>
+        th,td{
+            text-align: center;
+        }
+        .aa{
+            margin:0 auto;
+        }
+    </style>
 </head>
 <body>
-属性列表
+        <table>
+            <tr>
+                <th colspan="4" align="center">属性列表</th>
+            </tr>
+            <tr>
+                <th>id</th>
+                <th>属性名称</th>
+                <th>颜色</th>
+                <th>操作</th>
+            </tr>
+            <foreach name="attr" item="v">
+                <tr>
+                    <td>{$v.id}</td>
+                    <td>{$v.name}</td>
+                    <td ><div class="aa" style="width:20px;height:20px;background:{$v.color}"></div></td>
+                    <td>[<a href="">修改</a>]
+                        [<a href="">删除</a>]
+                    </td>
+                </tr>
+            </foreach>
+        </table>
 </body>
 </html>

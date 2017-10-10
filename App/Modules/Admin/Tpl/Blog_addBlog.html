@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <css file="__PUBLIC__/Css/style.css"/>
+    <script>
+        window.UEDITOR_HOME_URL = '__ROOT__/APP/Data/Ueditor/';
+        window.onload = function(){
+//            window.UEDITOR_CONFIG.initialFrameWidth = 1200;
+            window.UEDITOR_CONFIG.initialFrameHeight = 400;
+
+
+            UE.getEditor('content');
+        }
+    </script>
+    <js file="__ROOT__/App/Data/Ueditor/ueditor.config.js"/>
+    <js file="__ROOT__/App/Data/Ueditor/ueditor.all.min.js"/>
+    <style>
+        td{
+            padding: 10px;
+        }
+        .checkbox{
+            width: 15px;
+            height: 15px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form action="{:U(GROUP_NAME . '/Blog/addBlogHandle')}" method="post">
+        <table>
+            <tr>
+                <td colspan="2" align="center">添加博文</td>
+            </tr>
+            <tr>
+                <td align="right">所属分类：</td>
+                <td>
+                    <select>
+                        <option value="">-------请选择------</option>
+                        <foreach name="cate" item="v">
+                            <option value={$v.name}>{$v.html}{$v.name}</option>
+                        </foreach>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right">博文属性：</td>
+                <td>
+                   <foreach name="attr" item="v">
+                       <input class="checkbox" type="checkbox" name="arrt[]"/>&nbsp{$v.name}&nbsp&nbsp&nbsp
+                   </foreach>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea name="content" id="content"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="保存提交"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

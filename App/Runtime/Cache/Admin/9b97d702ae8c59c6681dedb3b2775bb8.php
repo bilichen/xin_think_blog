@@ -31,8 +31,8 @@
     <div class="left">
         <dl>
             <dt>博文管理
-                <dd><a href="<?php echo U('Admin/MsgMange/index','','');?>" target="to">博文列表</a></dd>
-                <dd><a href="<?php echo U('Admin/MsgMange/index','','');?>" target="to">添加博文</a></dd>
+                <dd><a href="<?php echo U(GROUP_NAME . '/Blog/index');?>" target="to">博文列表</a></dd>
+                <dd><a href="<?php echo U(GROUP_NAME . '/Blog/addBlog');?>" target="to">添加博文</a></dd>
             </dt>
 
             <dt>属性管理

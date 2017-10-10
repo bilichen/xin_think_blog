@@ -3,8 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <Css file="__PUBLIC__ ./Css/style.css"/>
 </head>
 <body>
-添加属性
+    <form action="{:U(GROUP_NAME . '/Attribute/addAttrHandle')}" method="post">
+        <table>
+            <tr>
+                <td colspan="2" align="center">添加属性</td>
+            </tr>
+            <tr>
+                <td align="right">属性名称：</td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td align="right">属性颜色：</td>
+                <td><input type="text" name="color"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" value="保存提交"></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>
