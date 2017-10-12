@@ -3,9 +3,15 @@
 class BlogAction extends CommonAction{
 
     public function index(){
+        $this->blog = D('BlogRelation')->get_blogs();
+//        p($blog);
+//        die;
+//        $b = D('BlogRelation')->relation(true)->select();
+//        p($b);
+//        die;
         $this->display();
 
-    }
+}
 
     public function addBlog(){
         import('Class.CateGory',APP_PATH);
