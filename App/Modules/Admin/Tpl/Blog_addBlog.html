@@ -34,10 +34,10 @@
             <tr>
                 <td align="right">所属分类：</td>
                 <td>
-                    <select>
+                    <select  name="cid">
                         <option value="">-------请选择------</option>
                         <foreach name="cate" item="v">
-                            <option value={$v.name}>{$v.html}{$v.name}</option>
+                            <option value={$v.id}>{$v.html}{$v.name}</option>
                         </foreach>
                     </select>
                 </td>
@@ -46,10 +46,17 @@
                 <td align="right">博文属性：</td>
                 <td>
                    <foreach name="attr" item="v">
-                       <input class="checkbox" type="checkbox" name="arrt[]"/>&nbsp{$v.name}&nbsp&nbsp&nbsp
+                       <input class="checkbox" type="checkbox" name="aid[]" value={$v.id}>&nbsp{$v.name}&nbsp&nbsp&nbsp
                    </foreach>
                 </td>
             </tr>
+            <tr>
+                <td align="right">博文标题：</td>
+                <td>
+                    <input type="text" name="title">
+                </td>
+            </tr>
+
             <tr>
                 <td colspan="2">
                     <textarea name="content" id="content"></textarea>
