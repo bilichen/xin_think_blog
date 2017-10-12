@@ -6,12 +6,32 @@ class BlogAction extends CommonAction{
         $this->blog = D('BlogRelation')->get_blogs();
 //        p($blog);
 //        die;
-//        $b = D('BlogRelation')->relation(true)->select();
+//        $field = array('del');//不需要显示的字段
+//        $where = array('del' =>0);//查询条件，只查del=0的
+//        //field 要显示的字段，如果是true则表示不显示当前数据的字段，false则显示
+//       $this->blog = D('BlogRelation')->field($field,true)->where($where)->relation(true)->select();
 //        p($b);
 //        die;
         $this->display();
 
 }
+    //回收站
+    public function recovery(){
+        $this->blog = D('BlogRelation')->get_blogs(1);
+        $this->display('index');
+    }
+    //删除博文到回收站
+    public function del(){
+        $data = array(
+            'id' => I('id'),
+            'del' => 1,
+        );
+        if(M('blog')->save($data)){
+            $this->success('删除成功',U(GROUP_NAME . '/Blog/index'));
+        }else{
+            $this->error('删除失败');
+        }
+    }
 
     public function addBlog(){
         import('Class.CateGory',APP_PATH);

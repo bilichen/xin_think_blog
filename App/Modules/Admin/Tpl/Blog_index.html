@@ -34,15 +34,15 @@
                     <td>{$v.title}</td>
                     <td>{$v.cate}</td>
                     <td>
-                        <foreach name={$v.attr} item="m">
-                            {$m.name}
+                        <foreach name="v.attr" item="v_attr">
+                            <strong style="color:{$v_attr.color}">[{$v_attr.name}]</strong>
                         </foreach>
                     </td>
                     <td>{$v.content}</td>
                     <td>{$v.click}</td>
-                    <td>{$v.time}</td>
+                    <td>{$v.time|date='y-m-d H:i',###}</td>
                     <td>[<a href="">修改</a>]
-                        [<a href="">删除</a>]
+                        [<a href="{:U(GROUP_NAME . '/Blog/del',array('id'=>$v['id']))}">删除</a>]
                     </td>
                 </tr>
             </foreach>
