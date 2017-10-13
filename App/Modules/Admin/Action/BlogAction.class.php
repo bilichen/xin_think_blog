@@ -20,17 +20,34 @@ class BlogAction extends CommonAction{
         $this->blog = D('BlogRelation')->get_blogs(1);
         $this->display('index');
     }
-    //删除博文到回收站
-    public function del(){
+    //删除/还原博文到回收站
+    public function delOrRestore(){
         $data = array(
-            'id' => I('id'),
-            'del' => 1,
+            'id' => I('id',0,intval),
+            'del' =>I('num',0,intval),
         );
-        if(M('blog')->save($data)){
-            $this->success('删除成功',U(GROUP_NAME . '/Blog/index'));
+        if(M('blog')->save($data) !== false){
+            if(I('num')==1){
+                $this->success('删除到回收站成功',U(GROUP_NAME . '/Blog/index'));
+            }else{
+                $this->success('还原成功',U(GROUP_NAME . '/Blog/index'));
+            }
         }else{
             $this->error('删除失败');
         }
+    }
+    //彻底删除
+    public function delete(){
+        if(M('blog')->delete(I('id',0,intval))){
+           $where = array(
+                'bid' => I('id',0,intval),
+           );
+            M('blog_attr')->where($where)->delete();
+            $this->success('彻底删除成功',U(GROUP_NAME . '/Blog/index'));
+        }else{
+            $this->error('彻底删除失败');
+        }
+
     }
 
     public function addBlog(){

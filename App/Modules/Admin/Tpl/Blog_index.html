@@ -41,9 +41,15 @@
                     <td>{$v.content}</td>
                     <td>{$v.click}</td>
                     <td>{$v.time|date='y-m-d H:i',###}</td>
-                    <td>[<a href="">修改</a>]
-                        [<a href="{:U(GROUP_NAME . '/Blog/del',array('id'=>$v['id']))}">删除</a>]
-                    </td>
+                    <if condition="ACTION_NAME eq 'index'">
+                        <td>[<a href="">修改</a>]
+                            [<a href="{:U(GROUP_NAME . '/Blog/delOrRestore',array('num' => 1,'id'=>$v['id']))}">删除</a>]
+                        </td>
+                    <else/>
+                        <td>[<a href="{:U(GROUP_NAME . '/Blog/delOrRestore',array('num' => 0,'id'=>$v['id']))}">还原</a>]
+                            [<a href="{:U(GROUP_NAME . '/Blog/delete',array('id'=>$v['id']))}">彻底删除</a>]
+                        </td>
+                    </if>
                 </tr>
             </foreach>
         </table>
