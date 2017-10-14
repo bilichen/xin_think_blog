@@ -86,3 +86,124 @@ head,body,html{
     background-color:#4997d2;
     color:white
 }
+
+.content{
+    width: 100%;
+    height: 900px;
+    background-color: #EDECF1;
+    border-top: 1px solid black;
+}
+.content_left{
+    float: left;
+    width: 50%;
+    height: 878px;
+    margin-left: 10%;
+    margin-top: 20px;
+    background-color: #FFFFFF;
+}
+.content_left_top{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #F8F8F8;
+    padding-left: 3%;
+    border: 1px solid #DBDBDD;
+}
+
+.content_left_content{
+    float: left;
+    width: 45%;
+    height: 400px;
+    margin-left: 3%;
+    margin-top: 30px;
+}
+.content_left_content_top{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.content_left_content_top_left{
+    float: left;
+}
+.content_left_content_top_right{
+    float: right;
+}
+ul,li{
+    padding: 0;
+    margin: 0px;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    color: #2D64B3;
+}
+.content_left_content hr{
+    margin-left: 20px;
+    margin-right: 20px;
+    color: #DBDBDD;
+}
+.content_left_content_content{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.content_left_content_content li{
+    padding-bottom: 30px;
+}
+.content_left_content_content_left{
+    float: left;
+}
+.content_left_content_content_right{
+    float: right;
+}
+
+.content_right{
+    float: right;
+    width: 27%;
+    height: 800px;
+    margin-right: 10%;
+    margin-top: 20px;
+    background-color: #EDECF1;
+}
+.content_right_box{
+    background-color: #FFFFFF;
+    margin-bottom: 30px;
+}
+.content_right_top{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #F8F8F8;
+    padding-left: 3%;
+    border: 1px solid #DBDBDD;
+    font-size: 0.8em;
+}
+.content_right_content{
+    padding: 10px;
+    font-size: 0.8em;
+}
+.content_right_content li{
+    padding-bottom: 10px;
+}
+
+
+
+.bottom{
+    width: 100%;
+    height: 80px;
+    background-color: #30352F;
+    color: black;
+    font-size: 0.8em;
+    margin: 0 auto;
+    z-index: 1;
+}
+.bottom_1{
+    margin-left: 10%;
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+}
+.bottom_1 img{
+    width: 200px;
+    height: 60px;
+}
