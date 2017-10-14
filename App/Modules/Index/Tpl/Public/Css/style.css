@@ -1,0 +1,88 @@
+head,body,html{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.top{
+    width: 100%;
+    height: 40px;
+    background-color: #030303;
+    color: #C5CACD;
+    font-size: 0.8em;
+    /*padding-top: 10px;*/
+    margin: 0 auto;
+}
+.top_1{
+    margin-left: 10%;
+    width: 80%;
+    height: 20px;
+    padding: 10px;
+}
+.top_left{
+    float:left;
+}
+.top_right{
+    float:right;
+}
+.top2{
+    width: 100%;
+    height: 80px;
+    background-color: #30352F;
+    color: black;
+    font-size: 0.8em;
+    margin: 0 auto;
+}
+.top_2{
+    margin-left: 10%;
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+}
+.top_2 img{
+    width: 200px;
+    height: 60px;
+}
+
+.box{
+    float: right;
+    position: relative;
+    margin-top: 15px;
+}
+.search-icon{
+    background: url(../Images/search.png) no-repeat;
+    width:25px;
+    height: 25px;
+    display:block;
+    float: left;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+.search-input{
+    font-size:0.875em;
+    padding:.3em 2em .3em 3em;
+    border:2px solid rgb(241,202,126);
+    width: 200px;
+    height: 33px;
+}
+
+.btn{
+    border: none;
+    position:absolute;
+    left: 160px;
+    top:2px;
+    height: 29px;
+    width: 38px;
+    display:inline-block;
+    padding:.3em .5em .3em;
+    font-family:"Avenir LT W01 65 Medium", Arial, Helvetica, sans-serif;
+    color:#4997d2;
+    background: #fff;
+}
+.btn:hover{
+    cursor:pointer;
+    background-color:#4997d2;
+    color:white
+}
