@@ -9,5 +9,7 @@ return array(
 
     'URL_HTML_SUFFIX' =>'',//去除伪后缀名
 
-    'TMPL_EXCEPTION_FILE' => './Public/Tpl/error.html'
+    'TMPL_EXCEPTION_FILE' => './Public/Tpl/error.html',
+
+
 );

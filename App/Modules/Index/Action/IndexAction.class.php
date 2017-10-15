@@ -7,5 +7,16 @@ class IndexAction extends Action{
         $this->display();
     }
 
+    public function listData(){
+        $this->display();
+
+    }
+
+    public function show(){
+
+        $this->display();
+
+    }
+
 
 }
