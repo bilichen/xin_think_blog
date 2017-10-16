@@ -21,6 +21,8 @@
 </head>
 <body>
 <div>
+<?php
+ import('Class.CateGory',APP_PATH); $cate = M('cate')->order('sort')->select(); $cate = CateGory::unlimitedForLayer($cate); ?>
 <div class="header">
     <!--header头部-->
     <div class="top">
@@ -58,46 +60,14 @@
                 <li>
                     <a href="#">博客首页</a>
                 </li>
-                <li>
-                    <a href="#">HTML</a>
-                </li>
-                <li>
-                    <a href="#">DIV+CSS</a>
-                </li>
-                <li>
-                    <a href="#">JavaScript</a>
-                    <ul class="animenu__nav__child">
-                        <li><a href="">JQuery</a></li>
-                        <li><a href="">AJax</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">PHP</a>
-                    <ul class="animenu__nav__child">
-                        <li><a href="">对象</a></li>
-                        <li><a href="">数组</a></li>
-                        <li><a href="">字符串</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">MySql</a>
-                    <ul class="animenu__nav__child">
-                        <li><a href="">存储引擎</a></li>
-                        <li><a href="">视图</a></li>
-                        <li><a href="">事务</a></li>
-                        <li><a href="">存储过程</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Linux</a>
-                    <ul class="animenu__nav__child">
-                        <li><a href="">基本命令</a></li>
-                        <li><a href="">网络配置</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">其它</a>
-                </li>
+
+                <?php if(is_array($cate)): foreach($cate as $key=>$v): ?><li>
+                        <a href="#"><?php echo ($v["name"]); ?></a>
+                        <?php if($v['child']): ?><ul class="animenu__nav__child">
+                                <?php if(is_array($v["child"])): foreach($v["child"] as $key=>$value): ?><li><a href=""><?php echo ($value["name"]); ?></a></li><?php endforeach; endif; ?>
+                            </ul><?php endif; ?>
+                    </li><?php endforeach; endif; ?>
+
             </ul>
         </div>
     </div>

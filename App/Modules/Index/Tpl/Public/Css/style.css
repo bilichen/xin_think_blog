@@ -233,14 +233,15 @@ a{
     height: 878px;
     margin-left: 10%;
     margin-top: 20px;
-    background-color: #FFFFFF;
 
 }
-/*.list_content_left_box{*/
-    /*height: 250px;*/
-    /*border: 1px solid  #DBDBDD;*/
-    /*border-radius: 4px;*/
-/*}*/
+.list_content_left_box{
+    height: 250px;
+    border: 1px solid  #DBDBDD;
+    border-radius: 4px;
+    background-color: white;
+    margin-bottom: 20px;
+}
 .list_content_left p{
     margin-left: 20px;
     color: #2D64B3;

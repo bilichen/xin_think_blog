@@ -4,6 +4,11 @@
 class IndexAction extends Action{
 
     public function index(){
+//        import('Class.CateGory',APP_PATH);
+//        $data =  M('cate')->order('sort')->select();
+//        $data = CateGory::unlimitedForLayer($data);
+//        p($data);
+//        die;
         $this->display();
     }
 

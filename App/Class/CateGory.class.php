@@ -15,6 +15,20 @@ class CateGory{
         }
         return $arr;
     }
+    //组合多维数组
+
+    static public function unlimitedForLayer($cate,$name='child',$pid=0){
+        $arr = array();
+        foreach($cate as $v){
+            if($v['pid'] == $pid){
+                $v[$name] = self::unlimitedForLayer($cate,$name,$v['id']);
+                $arr[] = $v;
+            }
+        }
+        return $arr;
+    }
+
+
     //获取当前数据的所有子数据
     static public function getChild($cate,$pid){
         $arr = array();
