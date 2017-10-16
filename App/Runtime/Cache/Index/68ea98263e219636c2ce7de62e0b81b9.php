@@ -23,6 +23,7 @@
 <div>
 <?php
  import('Class.CateGory',APP_PATH); $cate = M('cate')->order('sort')->select(); $cate = CateGory::unlimitedForLayer($cate); ?>
+
 <div class="header">
     <!--header头部-->
     <div class="top">
@@ -60,6 +61,8 @@
                 <li>
                     <a href="#">博客首页</a>
                 </li>
+
+
 
                 <?php if(is_array($cate)): foreach($cate as $key=>$v): ?><li>
                         <a href="#"><?php echo ($v["name"]); ?></a>

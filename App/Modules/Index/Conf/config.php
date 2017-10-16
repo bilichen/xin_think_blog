@@ -11,5 +11,9 @@ return array(
 
     'TMPL_EXCEPTION_FILE' => './Public/Tpl/error.html',
 
+    'APP_AUTOLOAD_PATH' => '@.TagLib',
+
+    'TAGLIB_BUILD_IN' => 'Cx,Blog',
+
 
 );
