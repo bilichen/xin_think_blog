@@ -64,12 +64,16 @@
 
 
 
-                <?php if(is_array($cate)): foreach($cate as $key=>$v): ?><li>
+
+
+                <?php
+ $cate = M('cate')->order("sort")->select(); import('Class.CateGory',APP_PATH); $cate = CateGory::unlimitedForLayer($cate); foreach($cate as $v): ?>//自定义标签，返回html格式代码
+                    <li>
                         <a href="#"><?php echo ($v["name"]); ?></a>
                         <?php if($v['child']): ?><ul class="animenu__nav__child">
                                 <?php if(is_array($v["child"])): foreach($v["child"] as $key=>$value): ?><li><a href=""><?php echo ($value["name"]); ?></a></li><?php endforeach; endif; ?>
                             </ul><?php endif; ?>
-                    </li><?php endforeach; endif; ?>
+                    </li><?php endforeach;?>
 
             </ul>
         </div>

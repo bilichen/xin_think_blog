@@ -5,10 +5,7 @@
 //        p($cate);
 //        die;
 ?>
-<nav limit="10" order="sort">
-    <span></span>
-    <a href=""></a>
-</nav>
+
 <div class="header">
     <!--header头部-->
     <div class="top">
@@ -49,7 +46,9 @@
 
 
 
-                <foreach name="cate" item="v">
+
+
+                <nav order="sort">//自定义标签，返回html格式代码
                     <li>
                         <a href="#">{$v.name}</a>
                         <if condition="$v['child']">
@@ -60,7 +59,7 @@
                             </ul>
                         </if>
                     </li>
-                </foreach>
+                </nav>
 
             </ul>
         </div>
