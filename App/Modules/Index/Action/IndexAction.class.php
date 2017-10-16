@@ -13,6 +13,8 @@ class IndexAction extends Action{
     }
 
     public function listData(){
+//        p($_GET['id']);
+//        die;
         $this->display();
 
     }
