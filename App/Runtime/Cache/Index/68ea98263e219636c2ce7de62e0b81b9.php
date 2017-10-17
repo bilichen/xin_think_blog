@@ -59,19 +59,16 @@
             </button>
             <ul class="animenu__nav">
                 <li>
-                    <a href="#">博客首页</a>
+                    <a href="__GROUP__">博客首页</a>
                 </li>
 
 
-
-
-
                 <?php
- $cate = M('cate')->order("sort")->select(); import('Class.CateGory',APP_PATH); $cate = CateGory::unlimitedForLayer($cate); foreach($cate as $v): ?>//自定义标签，返回html格式代码
+ $_nav_cate = M('cate')->order("sort")->select(); import('Class.CateGory',APP_PATH); $_nav_cate = CateGory::unlimitedForLayer($_nav_cate); foreach($_nav_cate as $_nav_cate_v): extract($_nav_cate_v); $url = U('/c_' . $id); ?>//自定义标签，返回html格式代码
                     <li>
-                        <a href=""><?php echo ($v["name"]); ?></a>
-                        <?php if($v['child']): ?><ul class="animenu__nav__child">
-                                <?php if(is_array($v["child"])): foreach($v["child"] as $key=>$value): ?><li><a href=""><?php echo ($value["name"]); ?></a></li><?php endforeach; endif; ?>
+                        <a href="<?php echo ($url); ?>"><?php echo ($name); ?></a>
+                        <?php if($child): ?><ul class="animenu__nav__child">
+                                <?php if(is_array($child)): foreach($child as $key=>$value): ?><li><a href="<?php echo U('/c_'.$value['id']);?>"><?php echo ($value["name"]); ?></a></li><?php endforeach; endif; ?>
                             </ul><?php endif; ?>
                     </li><?php endforeach;?>
 

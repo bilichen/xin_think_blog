@@ -10,7 +10,7 @@
 
         //数据库参数
         'DB_HOST'=>'localhost',
-        'DB_PORT'=>'3307',
+        'DB_PORT'=>'3306',
         'DB_USER' =>'root',
         'DB_PWD' =>'',
         'DB_NAME' =>'blog',
@@ -28,11 +28,13 @@
        'LOAD_EXT_CONFIG' =>'code_config',
 
         //开启路由配置
+        'URL_MODEL' => 2,
         'URL_ROUTER_ON' =>true,
         'URL_ROUTE_RULES' => array(
-            'l/:id\d' => 'Index/Index/listData',//直接c
+            ':id\d' => 'Index/Index/listData',//直接c
             's/:id\d' => 'Index/Index/show',//s后面加数字\d正则，只适配数字
-            '/^c_(\d+)$/' => 'Index/Index/listData?id=:1',//正则字母+数字  (c_11112)
+            '/^c_(\d+)$/' => 'Index/Index/listData?id=:1'//正则字母+数字  (c_11112)
+//            '/Index/^c_(\d+)$/' => 'Index/Index/Index/listData?id=:1',//正则字母+数字  (c_11112)
         ),
 
     );

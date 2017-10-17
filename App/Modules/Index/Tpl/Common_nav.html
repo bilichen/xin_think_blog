@@ -41,20 +41,17 @@
             </button>
             <ul class="animenu__nav">
                 <li>
-                    <a href="#">博客首页</a>
+                    <a href="__GROUP__">博客首页</a>
                 </li>
-
-
-
 
 
                 <nav order="sort">//自定义标签，返回html格式代码
                     <li>
-                        <a href="">{$v.name}</a>
-                        <if condition="$v['child']">
+                        <a href="{$url}">{$name}</a>
+                        <if condition="$child">
                             <ul class="animenu__nav__child">
-                                <foreach name="v.child" item="value">
-                                    <li><a href="">{$value.name}</a></li>
+                                <foreach name="child" item="value">
+                                    <li><a href="{:U('/c_'.$value['id'])}">{$value.name}</a></li>
                                 </foreach>
                             </ul>
                         </if>

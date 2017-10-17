@@ -7,7 +7,7 @@ return array(
         '__STATIC__' => __ROOT__.'/'. APP_NAME.'/Modules/Index/Tpl/Static',
     ),
 
-    'URL_HTML_SUFFIX' =>'',//去除伪后缀名
+//    'URL_HTML_SUFFIX' =>'',//去除伪后缀名
 
     'TMPL_EXCEPTION_FILE' => './Public/Tpl/error.html',
 

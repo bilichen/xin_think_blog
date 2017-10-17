@@ -27,10 +27,12 @@ class TagLibBlog extends TagLib{
         //php定界符，返回html格式代码，相当于在html中直接书写
         $str = <<<str
 <?php
-    \$cate = M('cate')->order("{$attr['order']}")->select();
+    \$_nav_cate = M('cate')->order("{$attr['order']}")->select();
     import('Class.CateGory',APP_PATH);
-    \$cate = CateGory::unlimitedForLayer(\$cate);
-    foreach(\$cate as \$v):
+    \$_nav_cate = CateGory::unlimitedForLayer(\$_nav_cate);
+    foreach(\$_nav_cate as \$_nav_cate_v):
+        extract(\$_nav_cate_v);
+        \$url = U('/c_' . \$id);
 ?>
 str;
         $str .=$content;
