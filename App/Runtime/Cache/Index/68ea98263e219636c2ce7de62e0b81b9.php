@@ -440,6 +440,7 @@
         <div class="content_right_top">
             <strong>热门博文</strong>
         </div>
+        <?php echo W('Blog');?>
         <div class="content_right_content">
             <ul>
                 <li>
