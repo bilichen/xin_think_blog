@@ -26,6 +26,7 @@
     </style>
 </head>
 <body>
+
 <div class="container">
     <a href="<?php echo U('Admin/Index/lgout');?>">退出</a>
     <div class="left">

@@ -4,61 +4,15 @@
         <div class="content_right_top">
             <strong>热门博文</strong>
         </div>
-        {:W('Blog')}
-        <div class="content_right_content">
-            <ul>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-            </ul>
-        </div>
+        {:W('Hot',array('limit' => 5))}
+
     </div>
 
     <div class="content_right_box">
         <div class="content_right_top">
             <strong>最新发布</strong>
         </div>
-        <div class="content_right_content">
-            <ul>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-            </ul>
-        </div>
+        {:W('New',array('limit' => 5))}
     </div>
 
     <div class="content_right_box">

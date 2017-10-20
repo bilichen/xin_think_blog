@@ -86,350 +86,30 @@
                 <strong>天龙博文</strong>
             </div>
 
-            <div class="content_left_content">
-                <div class="content_left_content_top">
-                   <div class="content_left_content_top_left">
-                     <strong>PHP</strong>
-                   </div>
-                    <div class="content_left_content_top_right">
-                      <a href="##">更多>></a>
+            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): ?><div class="content_left_content">
+                    <div class="content_left_content_top">
+                       <div class="content_left_content_top_left">
+                         <strong><?php echo ($v["name"]); ?></strong>
+                       </div>
+                        <div class="content_left_content_top_right">
+                          <a href="##">更多>></a>
+                        </div>
                     </div>
-                </div>
-                <hr/>
-                <div class="content_left_content_content">
-                    <ul>
-                        <li>
-                            <div class="content_left_content_content_left">
-                            >
-                            <a href="<?php echo U(GROUP_NAME . '/Index/show');?>">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
+                    <hr/>
+                    
+                    <div class="content_left_content_content">
+                        <ul>
+                            <li>
+                                <div class="content_left_content_content_left">
                                 >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                                <a href="<?php echo U(GROUP_NAME . '/Index/show');?>">对象的产生和生命周期</a>
+                                </div>
+                                <div class="content_left_content_content_right">06/06</div>
+                            </li>
 
-            <div class="content_left_content">
-                <div class="content_left_content_top">
-                    <div class="content_left_content_top_left">
-                        <strong>PHP</strong>
+                        </ul>
                     </div>
-                    <div class="content_left_content_top_right">
-                        <a href="##">更多>></a>
-                    </div>
-                </div>
-                <hr/>
-                <div class="content_left_content_content">
-                    <ul>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-
-            <div class="content_left_content">
-                <div class="content_left_content_top">
-                    <div class="content_left_content_top_left">
-                        <strong>PHP</strong>
-                    </div>
-                    <div class="content_left_content_top_right">
-                        <a href="##">更多>></a>
-                    </div>
-                </div>
-                <hr/>
-                <div class="content_left_content_content">
-                    <ul>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="content_left_content">
-                <div class="content_left_content_top">
-                    <div class="content_left_content_top_left">
-                        <strong>PHP</strong>
-                    </div>
-                    <div class="content_left_content_top_right">
-                        <a href="##">更多>></a>
-                    </div>
-                </div>
-                <hr/>
-                <div class="content_left_content_content">
-                    <ul>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                        <li>
-                            <div class="content_left_content_content_left">
-                                >
-                                <a href="">对象的产生和生命周期</a>
-                            </div>
-                            <div class="content_left_content_content_right">06/06</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+                </div><?php endforeach; endif; ?>
         </div>
         <!--左正文-->
 
@@ -440,61 +120,15 @@
         <div class="content_right_top">
             <strong>热门博文</strong>
         </div>
-        <?php echo W('Blog');?>
-        <div class="content_right_content">
-            <ul>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-            </ul>
-        </div>
+        <?php echo W('Hot',array('limit' => 5));?>
+
     </div>
 
     <div class="content_right_box">
         <div class="content_right_top">
             <strong>最新发布</strong>
         </div>
-        <div class="content_right_content">
-            <ul>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-                <li>
-                    <a href="">对象的产生和生命周期</a>
-                    <label>(1024)</label>
-                </li>
-            </ul>
-        </div>
+        <?php echo W('New',array('limit' => 5));?>
     </div>
 
     <div class="content_right_box">
@@ -520,7 +154,6 @@
 </div>
 <!--右正文-->
         <!--右正文-->
-
     </div>
 
     <!--底部-->

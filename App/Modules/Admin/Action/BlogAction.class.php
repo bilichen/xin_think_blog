@@ -87,7 +87,7 @@ class BlogAction extends CommonAction{
                     );
                    M('blog_attr')->data($data1)->add();
                 }
-                $this->success('添加博文成功',U('index'));
+                $this->success('添加博文成功',U(GROUP_NAME . '/Blog/index'));
             }
 
         }else{

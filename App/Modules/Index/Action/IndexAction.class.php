@@ -9,6 +9,12 @@ class IndexAction extends Action{
 //        $data = CateGory::unlimitedForLayer($data);
 //        p($data);
 //        die;
+//        $field = array('id','title','time');
+        $where = array('pid' => 0);
+        $this->cate1 = M('cate')->order('sort')->where($where)->select();
+        $this->blog1 = M('blog')->select();
+//        p($blog);
+//        die;
         $this->display();
     }
 
