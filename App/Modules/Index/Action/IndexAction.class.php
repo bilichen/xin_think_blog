@@ -12,7 +12,6 @@ class IndexAction extends Action{
 //        $field = array('id','title','time');
         $where = array('pid' => 0);
         $this->cate1 = M('cate')->order('sort')->where($where)->select();
-        $this->blog1 = M('blog')->select();
 //        p($blog);
 //        die;
         $this->display();
@@ -26,10 +25,7 @@ class IndexAction extends Action{
     }
 
     public function show(){
-
         $this->display();
-
     }
-
 
 }

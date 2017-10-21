@@ -16,7 +16,6 @@ class CateGory{
         return $arr;
     }
     //组合多维数组
-
     static public function unlimitedForLayer($cate,$name='child',$pid=0){
         $arr = array();
         foreach($cate as $v){

@@ -86,7 +86,11 @@
                 <strong>天龙博文</strong>
             </div>
 
-            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): ?><div class="content_left_content">
+
+
+            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): $dd = getBlog2id($v.id); p($dd); die; ?>
+
+                <div class="content_left_content">
                     <div class="content_left_content_top">
                        <div class="content_left_content_top_left">
                          <strong><?php echo ($v["name"]); ?></strong>
@@ -96,17 +100,16 @@
                         </div>
                     </div>
                     <hr/>
-                    
+
                     <div class="content_left_content_content">
                         <ul>
-                            <li>
-                                <div class="content_left_content_content_left">
-                                >
-                                <a href="<?php echo U(GROUP_NAME . '/Index/show');?>">对象的产生和生命周期</a>
-                                </div>
-                                <div class="content_left_content_content_right">06/06</div>
-                            </li>
-
+                            <?php if(is_array($$dd)): foreach($$dd as $key=>$value): ?><li>
+                                    <div class="content_left_content_content_left">
+                                    >
+                                    <a href="<?php echo U(GROUP_NAME . '/Index/show');?>"><?php echo ($value["title"]); ?></a>
+                                    </div>
+                                    <div class="content_left_content_content_right">06/06</div>
+                                </li><?php endforeach; endif; ?>
                         </ul>
                     </div>
                 </div><?php endforeach; endif; ?>
