@@ -88,7 +88,7 @@
 
 
 
-            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): $dd = getBlog2id($v.id); p($dd); die; ?>
+            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): $blog2id = getBlog2id($v['id']); ?>
 
                 <div class="content_left_content">
                     <div class="content_left_content_top">
@@ -103,12 +103,12 @@
 
                     <div class="content_left_content_content">
                         <ul>
-                            <?php if(is_array($$dd)): foreach($$dd as $key=>$value): ?><li>
+                            <?php if(is_array($blog2id)): foreach($blog2id as $key=>$value): ?><li>
                                     <div class="content_left_content_content_left">
                                     >
                                     <a href="<?php echo U(GROUP_NAME . '/Index/show');?>"><?php echo ($value["title"]); ?></a>
                                     </div>
-                                    <div class="content_left_content_content_right">06/06</div>
+                                    <div class="content_left_content_content_right"><?php echo (date('m/d',$value["time"])); ?></div>
                                 </li><?php endforeach; endif; ?>
                         </ul>
                     </div>

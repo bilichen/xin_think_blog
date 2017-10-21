@@ -123,9 +123,10 @@ body{
 .content_left_content{
     float: left;
     width: 45%;
-    /*height: 400px;*/
+    height: 200px;
     margin-left: 3%;
     margin-top: 30px;
+    overflow: hidden;
 }
 .content_left_content_top{
     height: 30px;

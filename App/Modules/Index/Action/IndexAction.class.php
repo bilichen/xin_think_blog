@@ -20,6 +20,18 @@ class IndexAction extends Action{
     public function listData(){
 //        p($_GET['id']);
 //        die;
+        $where = array('cid'=>$_GET['id']);
+        $where1 = array('id'=>$_GET['id']);
+        $dataList = M('blog')->where($where)->select();
+        $cateName = M('cate')->where($where1)->getField('name',true);
+        $arr = array();
+        foreach($dataList as $v){
+            $v['name'] = $cateName[0];
+            $arr[] = $v;
+        }
+        $this->dataList = $arr;
+//        p($arr);
+//       die;
         $this->display();
 
     }

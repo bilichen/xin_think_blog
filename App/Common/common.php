@@ -5,8 +5,15 @@ function p($array){
 }
 
 function getBlog2id($id){
+//    $map['id&pid'] =array($id,$id,'_multi'=>true);
+    $map['id|pid'] = $id;
+    $cateid = M('cate')->where($map)->getField('id',true);
 
-    $where = array('cid' => $id);
+//    $arrayid = array(1,12);
+//    p($cateid);
+//    die;
+    $where['cid']=array("in",$cateid);
+//    $where = array('cid' => $arrayid);
     $blog = M('blog')->where($where)->select();
 //    if($blog){
 //        echo 11;
