@@ -88,27 +88,25 @@
 
 
 
-            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): $blog2id = getBlog2id($v['id']); ?>
-
-                <div class="content_left_content">
+            <?php if(is_array($cate1)): foreach($cate1 as $key=>$v): ?><div class="content_left_content">
                     <div class="content_left_content_top">
                        <div class="content_left_content_top_left">
                          <strong><?php echo ($v["name"]); ?></strong>
                        </div>
                         <div class="content_left_content_top_right">
-                          <a href="##">更多>></a>
+                          <a href="<?php echo U('/c_'.$v['id']);?>">更多>></a>
                         </div>
                     </div>
                     <hr/>
 
                     <div class="content_left_content_content">
                         <ul>
-                            <?php if(is_array($blog2id)): foreach($blog2id as $key=>$value): ?><li>
+                            <?php if(is_array($v["blog"])): foreach($v["blog"] as $key=>$value): ?><li>
                                     <div class="content_left_content_content_left">
                                     >
                                     <a href="<?php echo U(GROUP_NAME . '/Index/show');?>"><?php echo ($value["title"]); ?></a>
                                     </div>
-                                    <div class="content_left_content_content_right"><?php echo (date('m/d',$value["time"])); ?></div>
+                                    <div class="content_left_content_content_right"><?php echo (date('y/m/d',$value["time"])); ?></div>
                                 </li><?php endforeach; endif; ?>
                         </ul>
                     </div>

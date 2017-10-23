@@ -4,25 +4,41 @@
 class IndexAction extends Action{
 
     public function index(){
-//        import('Class.CateGory',APP_PATH);
-//        $data =  M('cate')->order('sort')->select();
-//        $data = CateGory::unlimitedForLayer($data);
-//        p($data);
-//        die;
-//        $field = array('id','title','time');
-        $where = array('pid' => 0);
-        $this->cate1 = M('cate')->order('sort')->where($where)->select();
-//        p($blog);
+        if(!$topCate = S('index_list')){//如果缓存不存在，就运行下面代码读取数据，如果缓存存在，则不读取，直接输出数据
+                import('Class.CateGory',APP_PATH);
+                $topCate = M('cate')->order('sort')->where(array('pid' =>0))->select();
+                $_cate_all = M('cate')->order('sort')->select();
+                $db = M('blog');
+                $field = array('id','title','time');
+                foreach($topCate as $k => $v){
+                    $cids = CateGory::getChildsId($_cate_all,$v['id']);
+                    $cids[] = $v['id'];
+                    $topCate[$k]['blog'] = $db->field($field)->where(array('cid' => array('in',$cids)))->select();
+                }
+                S('index_list',$topCate,10);//定义缓存，参数（名称，数据，有效时间）
+        }
+        $this->cate1 = $topCate;
+//        p($topCate);
 //        die;
         $this->display();
+
+        //old2方法
+//        $where = array('pid' => 0);
+//        $this->cate1 = M('cate')->order('sort')->where($where)->select();
+//        $this->display();
     }
 
     public function listData(){
-        $topCate = M('cate')->order('sort')->where(array('pid' =>0))->select();
-//        p($topCate);
-//        die;
-        $this->catex = $topCate;
+        $id = $_GET['id'];
+        import('Class.CateGory',APP_PATH);
+        $cate = M('cate')->order('sort')->select();
+        $cids = CateGory::getChildsId($cate,$id);
+        $cids[] = $id;
 
+        $this->blog = D('BlogView')->where(array('cid'=>array('in',$cids)))->select();
+
+//        p($blog);
+//        die;
         $this->display();
 
 
@@ -52,6 +68,12 @@ class IndexAction extends Action{
     }
 
     public function show(){
+        $id = $_GET['id'];
+
+        $this->blog = D('BlogShow')->where(array('id'=>$id))->select();
+
+//        p($blog);
+//        die;
         $this->display();
     }
 

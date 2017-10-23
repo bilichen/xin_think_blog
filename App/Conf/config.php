@@ -10,11 +10,14 @@
 
         //数据库参数
         'DB_HOST'=>'localhost',
-        'DB_PORT'=>'3307',
+        'DB_PORT'=>'3306',
         'DB_USER' =>'root',
         'DB_PWD' =>'',
         'DB_NAME' =>'blog',
         'DB_PREFIX' =>'hd_',
+
+        //调试模式
+//        'SHOW_PAGE_TRACE' => true,
 
         //点语法默认解析
         'TMPL_VAR_IDENTIFY' => 'array',

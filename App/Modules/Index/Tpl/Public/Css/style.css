@@ -103,7 +103,6 @@ body{
 .content_left{
     float: left;
     width: 50%;
-    /*height: 878px;*/
     margin-left: 10%;
     margin-top: 20px;
     background-color: #FFFFFF;
@@ -240,7 +239,7 @@ a{
 .list_content_left{
     float: left;
     width: 50%;
-    height: 878px;
+    /*height: 878px;*/
     margin-left: 10%;
     margin-top: 20px;
 

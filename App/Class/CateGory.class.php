@@ -39,4 +39,15 @@ class CateGory{
         }
         return $arr;
     }
+    //获取当前数据的所有子id
+    static public function getChildsId($cate,$pid){
+        $arr = array();
+        foreach($cate as $v){
+            if($v['pid'] == $pid){
+                $arr[] = $v['id'];
+                $arr = array_merge($arr,self::getChildsId($cate,$v['id']));
+            }
+        }
+        return $arr;
+    }
 }

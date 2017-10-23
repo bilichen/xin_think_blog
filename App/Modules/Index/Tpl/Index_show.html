@@ -7,15 +7,17 @@
     <div class="content">
         <!--左正文-->
         <div class="content_left">
-            <div class="content_left_top">
-                <strong>首页 > PHP > 对象</strong>
-            </div>
-            <p>对象的产生和生命周期</p>
-            <div class="show_content_left_time">发布于：2017年10月15日</div>
-            <div class="show_content_left_click">已被阅读1024次</div>
-            <div style="clear: both"></div>
-            <hr/>
-            <div class="show_content_left_content">这是正文</div>
+            <foreach name="blog" item="v">
+                <div class="content_left_top">
+                    <strong>首页 > {$v.name}</strong>
+                </div>
+                <p>{$v.title}</p>
+                <div class="show_content_left_time">发布于：{$v.time|date='y年m月d日',###}</div>
+                <div class="show_content_left_click">已被阅读{$v.click}次</div>
+                <div style="clear: both"></div>
+                <hr/>
+                <div class="show_content_left_content">{$v.content}</div>
+            </foreach>
         </div>
         <!--左正文-->
 

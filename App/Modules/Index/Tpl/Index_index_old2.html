@@ -15,26 +15,30 @@
 
             <foreach name="cate1" item="v">
 
+                <?php
+                     $blog2id =  getBlog2id($v['id']);
+                ?>
+
                 <div class="content_left_content">
                     <div class="content_left_content_top">
                        <div class="content_left_content_top_left">
                          <strong>{$v.name}</strong>
                        </div>
                         <div class="content_left_content_top_right">
-                          <a href="{:U('/c_'.$v['id'])}">更多>></a>
+                          <a href="##">更多>></a>
                         </div>
                     </div>
                     <hr/>
 
                     <div class="content_left_content_content">
                         <ul>
-                            <foreach name="v.blog" item="value">
+                            <foreach name="blog2id" item="value">
                                 <li>
                                     <div class="content_left_content_content_left">
                                     >
                                     <a href="{:U(GROUP_NAME . '/Index/show')}">{$value.title}</a>
                                     </div>
-                                    <div class="content_left_content_content_right">{$value.time|date='y/m/d',###}</div>
+                                    <div class="content_left_content_content_right">{$value.time|date='m/d',###}</div>
                                 </li>
                             </foreach>
                         </ul>

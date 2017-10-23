@@ -8,17 +8,17 @@
         <!--左正文-->
         <div class="list_content_left">
 
-            <foreach name="catex" item="v">
+            <foreach name="blog" item="v">
                 <div class="list_content_left_box">
                     <div class="content_left_top">
                         <strong>{$v.name}</strong>
                     </div>
-<!--                    <p>{$v.title}</p>-->
-<!--                    <div class="list_content_left_time">发布于：</div>-->
-<!--                    <div class="list_content_left_click">{$v.click}</div>-->
-<!--                    <div style="clear: both"></div>-->
-<!--                    <div class="list_content_left_content">{$v.content}</div>-->
-<!--                    <div class="list_content_left_red"><a href="">阅读全文>></a></div>-->
+                        <p>{$v.title}</p>
+                        <div class="list_content_left_time">发布于：{$v.time|date='y年m月d日',###}</div>
+                        <div class="list_content_left_click">{$v.click}</div>
+                        <div style="clear: both"></div>
+                        <div class="list_content_left_content">摘要：暂没添加</div>
+                        <div class="list_content_left_red"><a href="{:U('/'.$v['id'])}">阅读全文>></a></div>
                 </div>
             </foreach>
 
