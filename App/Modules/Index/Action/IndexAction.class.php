@@ -18,15 +18,30 @@ class IndexAction extends Action{
     }
 
     public function listData(){
-//        p($_GET['id']);
+        $where2 = array('pid'=>$_GET['id']);//传进所点击的id,获取cate所有当前id以级子类的pid
+
+        $catePid = M('cate')->where($where2)->getField('id',true);//能过cate的id,获取该id名
+        if($catePid){//如果没有子级id，反回false
+            array_unshift($catePid,$_GET['id']);//把父级id添加进数组
+        }else{
+            $catePid[0] = $_GET['id'];//没有子级，就只有自己一个父级id
+        }
+//        $catePid = array(1,10,11);
+//        $where['cid'] = array(1,10,11,'or');
+//        $where['cid'] = array($catePid,'or');
+          $where['cid'] = array('in',$catePid);
+//        p($catePid);
 //        die;
-        $where = array('cid'=>$_GET['id']);
-        $where1 = array('id'=>$_GET['id']);
-        $dataList = M('blog')->where($where)->select();
-        $cateName = M('cate')->where($where1)->getField('name',true);
+
+//        $where = array('cid'=>$_GET['id']);//传进所点击的id
+        $dataList = M('blog')->where($where)->select();//获取所点的id相应的blog
+        $where1 = array('id'=>$_GET['id']);//传进所点击的id，对应cate的id
+        $cateName = M('cate')->where($where1)->getField('name',true);//能过cate的id,获取该id名
+//        p($cateName);
+//       die;
         $arr = array();
         foreach($dataList as $v){
-            $v['name'] = $cateName[0];
+            $v['name'] = $cateName[0];//把name字段，压进数组，每个数组值都要有一个name
             $arr[] = $v;
         }
         $this->dataList = $arr;
