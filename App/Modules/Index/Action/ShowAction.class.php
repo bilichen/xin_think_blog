@@ -6,7 +6,7 @@ class ShowAction extends Action{
     public function index(){
         $id = $_GET['id'];
 
-        M('blog')->where(array('id'=>$id))->setInc('click');
+
         $blog = D('BlogShow')->find($id);
         import('Class.CateGory',APP_PATH);
         $cate = M('cate')->select();
@@ -15,5 +15,14 @@ class ShowAction extends Action{
 //        p($parent);die;
 
         $this->display();
+    }
+
+    //点击自动增加１
+    public function numInc(){
+        $id = $_GET['id'];
+//        p($id);die;
+        $click =  M('blog')->where(array('id'=>$id))->getField('click');
+        M('blog')->where(array('id'=>$id))->setInc('click');
+        echo 'document.write('.$click.')';
     }
 }

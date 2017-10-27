@@ -24,7 +24,7 @@
                 </div>
                 <p>{$blog.title}</p>
                 <div class="show_content_left_time">发布于：{$blog.time|date='y年m月d日',###}</div>
-                <div class="show_content_left_click">已被阅读{$blog.click}次</div>
+                <div class="show_content_left_click">已被阅读<script type="text/javascript" src="{:U(GROUP_NAME . '/Show/numInc',array('id'=>$blog['id']))}"></script>次</div>
                 <div style="clear: both"></div>
                 <hr/>
                 <div class="show_content_left_content" style='word-break: break-all'>{$blog.content}</div>
