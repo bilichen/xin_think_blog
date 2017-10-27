@@ -1,0 +1,47 @@
+<include file="Common:header"/>
+<body>
+<div>
+    <link rel="stylesheet" href="__ROOT__/App/Data/Ueditor/third-party/SyntaxHighlighter/shCoreDefault.css">
+    <script type="text/javascript" src="__ROOT__/App/Data/Ueditor/third-party/SyntaxHighlighter/shCore.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <include file="Common:nav"/>
+
+    <!--正文-->
+    <div class="content">
+        <!--左正文-->
+        <div class="content_left">
+                <div class="content_left_top">
+                    <strong>首页 ></strong>
+                    <php>$count = count($parent)-1;</php>
+                        <foreach name="parent" item="v">
+                            <strong><a href="{:U('/c_'.$v['id'])}"> {$v.name} </a></strong>
+                            <if condition="$key neq $count">
+                            >
+                            </if>
+                        </foreach>
+                </div>
+                <p>{$blog.title}</p>
+                <div class="show_content_left_time">发布于：{$blog.time|date='y年m月d日',###}</div>
+                <div class="show_content_left_click">已被阅读{$blog.click}次</div>
+                <div style="clear: both"></div>
+                <hr/>
+                <div class="show_content_left_content" style='word-break: break-all'>{$blog.content}</div>
+        </div>
+        <!--左正文-->
+
+
+
+        <!--右正文-->
+        <include file="Common:right"/>
+        <!--右正文-->
+
+    </div>
+
+    <!--底部-->
+        <include file="Common:bottom"/>
+    <!--底部-->
+</div>
+</body>
+</html>

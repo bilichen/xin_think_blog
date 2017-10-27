@@ -104,7 +104,7 @@
                             <?php if(is_array($v["blog"])): foreach($v["blog"] as $key=>$value): ?><li>
                                     <div class="content_left_content_content_left">
                                     >
-                                    <a href="<?php echo U(GROUP_NAME . '/Index/show');?>"><?php echo ($value["title"]); ?></a>
+                                    <a href="<?php echo U('/'.$value['id']);?>"><?php echo ($value["title"]); ?></a>
                                     </div>
                                     <div class="content_left_content_content_right"><?php echo (date('y/m/d',$value["time"])); ?></div>
                                 </li><?php endforeach; endif; ?>

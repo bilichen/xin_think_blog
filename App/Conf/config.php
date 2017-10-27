@@ -34,9 +34,9 @@
         'URL_MODEL' => 2,
         'URL_ROUTER_ON' =>true,
         'URL_ROUTE_RULES' => array(
-            ':id\d' => 'Index/Index/show',//直接c
+            ':id\d' => 'Index/Show/index',//直接c
 //            's/:id\d' => 'Index/Index/show',//s后面加数字\d正则，只适配数字
-            '/^c_(\d+)$/' => 'Index/Index/listData?id=:1'//正则字母+数字  (c_11112)
+            '/^c_(\d+)$/' => 'Index/ListData/index?id=:1'//正则字母+数字  (c_11112)
 //            '/Index/^c_(\d+)$/' => 'Index/Index/Index/listData?id=:1',//正则字母+数字  (c_11112)
         ),
 

@@ -59,12 +59,17 @@ class BlogAction extends CommonAction{
         $this->display();
     }
     public function addBlogHandle(){
+//        $dd = I('content');
+//        $dd = strip_tags(htmlspecialchars_decode($dd));
+//        p($dd);
+//        die;
 //        p($_POST);
 //        die;
         $data = array(
             'title' => I('title'),
             'cid' => I('cid'),
-            'content' => I('content'),
+            'content' => $_POST["content"],// 使用了富文本编辑器，若使用I方法将过滤掉HTML标签
+//            'content' =>strip_tags(htmlspecialchars_decode(I('content'))),
             'time' => time(),
             'del' => 0,
         );

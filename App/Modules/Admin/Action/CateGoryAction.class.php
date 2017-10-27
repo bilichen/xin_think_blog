@@ -16,10 +16,18 @@ class CateGoryAction extends CommonAction{
     //添加分类视图
     public function addCate(){
         $this->pid = I('pid' ,0);
+        $this->name =  I('name');
+
         $this->display();
     }
 
-    //添加分类表单处理
+    //添加顶级栏目
+    public function addTopCate(){
+        $this->pid = I('pid' ,0);
+        $this->display();
+    }
+
+    //添加分类表单处理(顶级和分类)
     public function addCateHandle(){
         if(M('cate')->add($_POST)){
             $this->success('添加成功',U('index'));
@@ -27,6 +35,9 @@ class CateGoryAction extends CommonAction{
             $this->error('添加失败');
         }
     }
+
+
+
 
     //修改排序表单处理
     public function updataSort(){

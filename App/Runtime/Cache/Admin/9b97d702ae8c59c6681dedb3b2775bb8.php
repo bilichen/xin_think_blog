@@ -43,7 +43,7 @@
             </dt>
             <dt>分类管理
                 <dd><a href="<?php echo U(GROUP_NAME . '/CateGory/index');?>" target="to">分类列表</a></dd>
-                <dd><a href="<?php echo U(GROUP_NAME . '/CateGory/addCate');?>" target="to">添加分类</a></dd>
+                <dd><a href="<?php echo U(GROUP_NAME . '/CateGory/addTopCate');?>" target="to">添加分类</a></dd>
             </dt>
             <dt>系统设置
                 <dd><a href="<?php echo U(GROUP_NAME . '/System/index');?>" target="to">验证码设置</a></dd>

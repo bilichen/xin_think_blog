@@ -39,13 +39,25 @@ class CateGory{
         }
         return $arr;
     }
-    //获取当前数据的所有子id
+    //传进一个父级分类id,获取所有子级分类id
     static public function getChildsId($cate,$pid){
         $arr = array();
         foreach($cate as $v){
             if($v['pid'] == $pid){
                 $arr[] = $v['id'];
                 $arr = array_merge($arr,self::getChildsId($cate,$v['id']));
+            }
+        }
+        return $arr;
+    }
+
+    //传进一个子级分类id，获取所有父级分类
+    static public function getParent($cate,$id){
+        $arr = array();
+        foreach($cate as $v){
+            if($v['id'] == $id){
+                $arr[] = $v;
+                $arr = array_merge(self::getParent($cate,$v['pid']),$arr);
             }
         }
         return $arr;
